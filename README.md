@@ -2,7 +2,7 @@
 
 Use this plugin to integrate the yeoman build into your maven build.
 ## Prerequisites
-* npm, bower, grunt 
+* npm, bower, grunt and npm-cache(only needed if useNpmCache parameter enabled)
 * maven 3
 
 ## Launched commands (default setup)
@@ -88,6 +88,9 @@ Configure the clean plugin in order to delete generated directories
     </plugin>
     
 ## Changelog
+
+### V0.6 2016-05-01
+* Add `useNpmCache` parameter to enable npm-cache use instead of npm
 
 ### V0.5 2015-08-19
 * Add `bowerVariant` parameter to be able to use an alternative to *bower* : *bower-act* (Thanks [Thorsten Pohl ](https://github.com/tpohl))
