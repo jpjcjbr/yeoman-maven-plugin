@@ -39,10 +39,13 @@ public class YeomanMojo extends AbstractMojo {
     boolean skipTests;
     @Parameter( property = "yo.skip", defaultValue = "false")
     boolean skip;
+<<<<<<< de20235566ff6b339d68b2848e8910975fe58bd9
     @Parameter( property = "npm.install.skip", defaultValue = "false" )
     boolean skipNpmInstall;
     @Parameter( property = "bower.install.skip", defaultValue = "false" )
     boolean skipBowerInstall;
+=======
+>>>>>>> adding useNpmCache parameter
 
     @Parameter(defaultValue = "false", required = false)
     boolean useNpmCache;
