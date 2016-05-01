@@ -40,6 +40,9 @@ public class YeomanMojo extends AbstractMojo {
     @Parameter( property = "yo.skip", defaultValue = "false")
     boolean skip;
 
+    @Parameter(defaultValue = "false", required = false)
+    boolean useNpmCache;
+    
     @Parameter( defaultValue = "install", required = true )
     String npmInstallArgs;
     @Parameter(defaultValue = "bower",  required = true )
@@ -83,10 +86,10 @@ public class YeomanMojo extends AbstractMojo {
     void npmInstall() throws MojoExecutionException {
         logToolVersion("node");
         logToolVersion("npm");
-        logAndExecuteCommand("npm "+ npmInstallArgs);
+        logAndExecuteCommand(getNpmExecutor() + npmInstallArgs);
     }
 
-    void bowerInstall() throws MojoExecutionException {
+	void bowerInstall() throws MojoExecutionException {
         logToolVersion(bowerVariant);
         logAndExecuteCommand(bowerVariant+ " " + bowerInstallArgs);
     }
@@ -131,6 +134,16 @@ public class YeomanMojo extends AbstractMojo {
     }
 
 
+    private String getNpmExecutor() {
+    	String npmExecutor = "npm ";
+    	
+    	if(useNpmCache) {
+    		npmExecutor = "npm-cache ";
+    	}
+    	
+		return npmExecutor;
+	}
+    
     private boolean isWindows() {
         return osName.startsWith("Windows");
     }
