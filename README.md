@@ -89,9 +89,6 @@ Configure the clean plugin in order to delete generated directories
     
 ## Changelog
 
-### V0.6 2016-05-01
-* Add `useNpmCache` parameter to enable npm-cache use instead of npm
-
 ### V0.5 2015-08-19
 * Add `bowerVariant` parameter to be able to use an alternative to *bower* : *bower-act* (Thanks [Thorsten Pohl ](https://github.com/tpohl))
 
